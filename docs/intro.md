@@ -40,7 +40,11 @@ npm init
 npm i @fabcotech/dappy-cli@latest --save-dev
 ```
 
-## Knowing or creating a private key
+## Development
+
+You can skip the two following sections as we will take many sortcuts to start playing with the dappy name system. Private keys are directly created for each new account on [gamma.dappy.tech](https://gamma.dappy.tech).
+
+## Knowing or creating a private key (production)
 
 Private key is the critical string that you need to create to manage domain names in dappy, you can use a private key that you already use for Ethereum or any EVM blockchain platform (`secp256k1` algorithm).
 
@@ -50,7 +54,7 @@ If you don't have any, you can create it with one command
 npx @fabcotech/dappy-cli generateprivatekey
 ```
 
-## Setting up config file
+### Setting up config file (production)
 
 `dappy.config.json` is the only file we'll need to setup. 
 

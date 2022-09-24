@@ -16,7 +16,7 @@ you should have the following log :
 (helloworld) listenning on 127.0.0.1:3008
 ```
 
-Now everything is setup, we can open dappy browser and load `mydomain.d:3008`.
+Now everything is setup, we can open dappy browser and load `mydomain.d:3008` or `mydomain.gamma:3008`.
 
 **💡 Note :** By default, browsers will of course try port 443 for HTTPS connections, in order to avoid listenning to the 443 port, we arbitrarily chose port 3008.
 
