@@ -30,3 +30,14 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+body {
+  padding: .5rem;
+  background-image: repeating-linear-gradient(45deg, rgb(12, 100, 98), rgba(12, 100, 98, 1) 1px, rgb(12, 200, 197) 1px, rgb(18, 179, 160) 5px);
+  background-size: cover;
+  overflow: auto;
+}
+
+body>div {
+  background: #fff;
+}
