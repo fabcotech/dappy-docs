@@ -10,9 +10,9 @@ sidebar_position: 1
 
 Hey there you are on the offical dappy docs, welcome ! 🚀😉.
 
-Dappy is a public open source name system that uses the blockchain, and provides a zero-trust co-resolution system. It has been engineered specifically for **🏢 critical web applications**, **🔒 protection of sensitive data** and **🚤 lean + rapid monitoring and management**. It is therefore a good fit for enterprises web applications, cryptocurrency, B2B or any other web application (or API) that needs high security and confidentiality.
+Dappy is a public open source name system that uses the blockchain, and provides a zero-trust co-resolution system. It has been engineered specifically for **🏢 critical web applications**, **🔒 protection of sensitive data** and **🚤 lean + rapid monitoring and management**. It is therefore a good fit for enterprises web applications, cryptocurrency, B2B or any other web application (or API) that needs high security and privacy.
 
-Dappy clients (browser or programs) do co-resolution, many public resolvers are queried (DNS over HTTPS) for IP addresses or certificates, instead of a single resolver. It removes many attack vectors and allows companies to deploy ultra-secure and confidential internet facing web services, very easily and cheaply.
+Dappy clients (browser or programs) do co-resolution, many public resolvers are queried (DNS over HTTPS) for IP addresses or certificates, instead of a single resolver. It removes many attack vectors and allows companies to easily and securely expand digital services.
 
 Dappy provides these instantaneous benefits :
 - **Easy and direct management of zones (through API)** : No need to manually connect and update DNS, it can all be automated, there are no DNS registrars, DNS registries, or any other private service.

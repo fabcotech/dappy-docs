@@ -8,6 +8,14 @@ One JSON file can manage hundreds of zones and domain names. Let's setup our fir
 
 A zone is simply the equivalent of a DNS (domain name system) zone, in the dappy name system. We will create a simple zone, the goal is to have a https website running on `localhost` (IP `127.0.0.1`).
 
+**Maybe your zones are already up to date**
+
+Depending on how you started, your zones may already be in sync with the blockchain state, it's always worth checking. 
+
+```bash
+npx @fabcotech/dappy-cli check
+```
+
 Let's create a new record in one of the zones that you have downloaded (you can also create from scratch).
 
 ```json title="dappy.config.json"

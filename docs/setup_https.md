@@ -6,9 +6,34 @@ sidebar_position: 5
 
 At the top level, dappy allows you to have a self signed certificate. This is because **you are your own certificate authority** 🔒🔒🔒, you don't have to ask permission to exist !
 
-Below is the `openssl` command we use yo generate a self signed certificate. Change `mydomain` so that it fits your domain of course.
+### The easy way
+
+You can use directly `@fabcotech/dappy-cli`, it has bindings with `openssl`.
 
 ```bash
+# Generate .key and .crt files for all hosts under 
+# a domain (dappy.config.json file)
+@fabcotech/dappy-cli generatecerts --domain mydomain.d
+
+# Apply cert for all hosts under a domain
+# in dappy.config.json
+@fabcotech/dappy-cli apply --cert group1.crt --domain mydomain.d
+
+# Generate .key and .crt files for a set of hosts
+@fabcotech/dappy-cli generatecerts --hosts mydomain.d foo.mydomain.d
+
+# Apply the cert for each host in dappy.config.json
+@fabcotech/dappy-cli apply --cert group1.crt --hosts mydomain.d foo.mydomain.d
+```
+
+**💡 Note :** You can create a single certificate for all hosts under a domain by using the --domain argument instead of listing all hosts. Having less certificates will also simplify your configuration on the server side.
+
+### The less easy way
+
+Below is the `openssl` command we use yo generate a self signed certificate. Change `mydomain` so that it fits your domain of course. We also provide the equivalent command in dappy-cli.
+
+```bash
+# with openssl
 openssl req \
   -x509 \
   -newkey rsa:2048 \
@@ -24,7 +49,7 @@ openssl req \
     echo '[req]'; \
     echo 'distinguished_name=req'; \
     echo '[san]'; \
-    echo 'subjectAltName=DNS.1:localhost,DNS.2:mydomain.d')
+    echo 'subjectAltName=DNS.1:mydomain.d')
 ```
 
 You are free to choose for how many days your certificate is valid.
@@ -55,6 +80,8 @@ Now we must add the CERT record to our config file and push again.
   }]
 }
 ```
+
+### Checking and updating zones
 
 ```bash
 npx @fabcotech/dappy-cli pushzones
