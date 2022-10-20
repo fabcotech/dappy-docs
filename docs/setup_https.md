@@ -13,17 +13,17 @@ You can use directly `@fabcotech/dappy-cli`, it has bindings with `openssl`.
 ```bash
 # Generate .key and .crt files for all hosts under 
 # a domain (dappy.config.json file)
-@fabcotech/dappy-cli generatecerts --domain mydomain.d
+npx @fabcotech/dappy-cli generatecerts --domain mydomain.d
 
 # Apply cert for all hosts under a domain
 # in dappy.config.json
-@fabcotech/dappy-cli apply --cert group1.crt --domain mydomain.d
+npx @fabcotech/dappy-cli apply --cert group1.crt --domain mydomain.d
 
 # Generate .key and .crt files for a set of hosts
-@fabcotech/dappy-cli generatecerts --hosts mydomain.d foo.mydomain.d
+npx @fabcotech/dappy-cli generatecerts --hosts mydomain.d foo.mydomain.d
 
 # Apply the cert for each host in dappy.config.json
-@fabcotech/dappy-cli apply --cert group1.crt --hosts mydomain.d foo.mydomain.d
+npx @fabcotech/dappy-cli apply --cert group1.crt --hosts mydomain.d foo.mydomain.d
 ```
 
 **💡 Note :** You can create a single certificate for all hosts under a domain by using the --domain argument instead of listing all hosts. Having less certificates will also simplify your configuration on the server side.
