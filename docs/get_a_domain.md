@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Get a domain
 
-## Enrivonments
+## Environments
 
 Two environments are actively maintained, one for production one for testing.
 
