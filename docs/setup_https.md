@@ -2,11 +2,11 @@
 sidebar_position: 5
 ---
 
-# Setup HTTPS/TLS
+# Generate and publish certificates
 
 At the top level, dappy allows you to have a self signed certificate. This is because **you are your own certificate authority** 🔒🔒🔒, you don't have to ask permission to exist !
 
-### The easy way
+## The easy way
 
 You can use directly `@fabcotech/dappy-cli`, it has bindings with `openssl`.
 
@@ -28,7 +28,7 @@ npx @fabcotech/dappy-cli apply --cert group1.crt --hosts mydomain.d foo.mydomain
 
 **💡 Note :** You can create a single certificate for all hosts under a domain by using the --domain argument instead of listing all hosts. Having less certificates will also simplify your configuration on the server side.
 
-### The less easy way
+## The less easy way
 
 Below is the `openssl` command we use yo generate a self signed certificate. Change `mydomain` so that it fits your domain of course. We also provide the equivalent command in dappy-cli.
 
@@ -81,7 +81,7 @@ Now we must add the CERT record to our config file and push again.
 }
 ```
 
-### Checking and updating zones
+## Checking and updating zones
 
 ```bash
 npx @fabcotech/dappy-cli pushzones
