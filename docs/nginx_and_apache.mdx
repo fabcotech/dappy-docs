@@ -1,0 +1,74 @@
+---
+sidebar_position: 8
+---
+# Enable TLS at server-side
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+Here are some configuration file examples that enables TLS
+
+## For server authentication
+
+```mdx-code-block
+<Tabs>
+<TabItem value="nginx" label="Nginx" default>
+```
+
+```title="/etc/nginx/conf.d/[YOUR_DOMAIN].conf"
+server {
+  server_name [YOUR_DOMAIN]
+  listen 443 ssl;
+  root /www/data;
+  location / {
+  }
+
+  proxy_http_version 1.1;
+  proxy_set_header Host $host;
+
+  ssl_protocols TLSv1.2 TLSv1.3;
+
+  ssl_certificate /etc/nginx/conf.d/[CERTIFICATE_FILE_NAME].crt;
+  ssl_certificate_key /etc/nginx/conf.d/[KEY_FILE_NAME].key;
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="apache" label="Apache">
+```
+
+```title="/etc/apache2/sites-enabled/[YOUR_DOMAIN].conf"
+<VirtualHost *:443>
+  SSLEngine on
+  ServerName [YOUR_DOMAIN]
+
+  LogLevel warn
+  SSLCertificateFile /etc/apache2/sites-enabled/[CERTIFICATE_FILE_NAME].crt
+  SSLCertificateKeyFile /etc/apache2/sites-enabled/[KEY_FILE_NAME].key
+  SSLProtocol TLSv1.2
+  <IfDefine thisIsAComment>
+    Comment https://httpd.apache.org/docs/2.4/en/ssl/ssl_howto.html
+  </IfDefine>
+  
+  DocumentRoot "/www/data"
+  
+  <Directory "/www/data">
+    AuthType None
+    Require all granted
+  </Directory>
+  
+</VirtualHost>
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+
+
+
+
