@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Generate and publish certificates
+# Generate and publish root certificates
 
 At the top level, dappy allows you to have a self signed certificate. This is because **you are your own certificate authority** 🔒🔒🔒, you don't have to ask permission to exist !
 
@@ -43,13 +43,13 @@ openssl req \
   -keyout mydomain.key \
   -out mydomain.crt \
   -outform PEM \
-  -subj '/CN=mydomain.d'\
+  -subj '/CN=paul.gamma'\
   -extensions san \
   -config <( \
     echo '[req]'; \
     echo 'distinguished_name=req'; \
     echo '[san]'; \
-    echo 'subjectAltName=DNS.1:mydomain.d')
+    echo 'subjectAltName=DNS.1:paul.gamma')
 ```
 
 You are free to choose for how many days your certificate is valid.
