@@ -1,0 +1,29 @@
+---
+sidebar_position: 8
+---
+
+# Manage mTLS in dappy browser
+
+## Create your own client certificate
+
+Go to Settings > Accounts > Add account
+
+Fill form like this:
+- **Ttype:** `TLS certificate`
+- **name:** `<your-client-certificate-name>`
+
+![create client certificate](./assets/browser_create_client_cert.png)
+
+Your client certificate is created and safely stored in dappy browser.
+
+![client certificates](./assets/browser_client_certs.png)
+
+## Use a client certificate for a domain
+
+Go to Settings > Add security
+
+Add any domains you want to send your client certificate:
+- 1 domain per line
+- wildcards are accepted
+
+![bind certificate to a domain](./assets/browser_bind_certificate_to_domain.png)
