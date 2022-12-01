@@ -38,9 +38,8 @@ Let's create a new record in one of the zones that you have downloaded (you can 
 ```
 
 🔍 Take the time to understand what is going on. Dappy CLI has created a new entry in the `config.zones` array. This new entry has three interesting properties:
-- `origin: "mydomain"` : this must obviously be replaced by your domain (without the `.d` at the end) this is the TLD.
+- `origin: "mydomain"` : this must obviously be replaced by your domain (without the `.d` or `.gamma` at the end) this is the TLD.
 - `type "A" record with data: "127.0.0.1"` : this tells dappy browser or any program that can resolve dappy names that `"127.0.0.1"` is the IP address at which the web app corresponding to `"mydomain"` will be served.
-
 
 ```bash
 npx @fabcotech/dappy-cli pushzones
@@ -48,16 +47,22 @@ npx @fabcotech/dappy-cli pushzones
 
 **The owner TXT record, what is it ?**
 
-If you have not downloaded the **dappy.config.json** file from the website and wanted to create the file from scratch, you may have the following log.
+If you created **dappy.config.json** file from scratch, you may have the following log.
 
 ```
 Using dappy network gamma
 ⨯ mydomain           : local zone is invalid, no owner
 ```
 
-That is great, it means we have forgotten the only record that is always needed for a zone to be valid : a TXT record with the owner (identified with the public key).
+That is great, it means the config file lacks the only record that is always needed for a zone to be valid : a TXT record with the owner (identified with the public key).
 
 This record (and public key) is used by each member of a dappy network when he wants to check that a zone update is legitimate. Only you with your private key will be able to air messages that will be accepted by the dappy network as a whole.
+
+If you don't know your public key :
+
+```bash
+npx @fabcotech/dappy-cli printpublickey
+```
 
 ```json title="dappy.config.json"
 {
@@ -75,6 +80,8 @@ This record (and public key) is used by each member of a dappy network when he w
 }
 ```
 
+The `no owner` error should be gone now.
+
 ```bash
 npx @fabcotech/dappy-cli pushzones
 ```
@@ -83,7 +90,7 @@ You should have the following log.
 
 ```
 Using dappy network gamma
-Will process the following zones        : bobby53
+Will process the following zones        : mydomain
 Dappy network   :  gamma
 Public key      :  abcdefgh
 Purchases and updates were deployed, now do dappy-cli check to verify the state of your domains

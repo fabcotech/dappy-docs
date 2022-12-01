@@ -46,13 +46,15 @@ You can skip the two following sections as we will take many sortcuts to start p
 
 ## Knowing or creating a private key (production)
 
-Private key is the critical string that you need to create to manage domain names in dappy, you can use a private key that you already use for Ethereum or any EVM blockchain platform (`secp256k1` algorithm).
+Private key is the critical string that you need to create to manage domain names in dappy, you can use a private key that you already use for Ethereum or any EVM blockchain platform (`secp256k1` algorithm). For obvious security reasons **we don't generate one for you on the website**, except on [gamma.dappy.tech](https://gamma.dappy.tech) where an insecure development key pair is created and displayed automatically.
 
-If you don't have any, you can create it with one command
+If you don't have any or just want a new one, you can create it with one command. 
 
 ```sh
 npx @fabcotech/dappy-cli generateprivatekey
 ```
+
+This commands maps to the npm package [elliptic](https://www.npmjs.com/package/elliptic) that has 11M monthly download, and is distributed by [github.com/indutny](https://github.com/indutny).
 
 ### Setting up config file (production)
 
@@ -61,6 +63,8 @@ npx @fabcotech/dappy-cli generateprivatekey
 You must know only two things to start working:
 - A dappy network ID `.options.dappyNetworkId`, you will likely use either `gamma` (the test network with free domain names) or `d` (the production network).
 - A private key `.options.privateKey`.
+
+You can create it by hand, but you can download a template directly from the "Domains" section on [app.dappy.tech](https://app.dappy.tech/) or [gamma.dappy.tech](https://gamma.dappy.tech/) after one or more purchases.
 
 ```json title="dappy.config.json"
 {
