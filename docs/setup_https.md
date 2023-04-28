@@ -14,19 +14,23 @@ You can use directly `@fabcotech/dappy-cli`, it has bindings with `openssl`.
 # Generate .key and .crt files for all hosts under 
 # a domain (dappy.config.json file)
 npx @fabcotech/dappy-cli generatecerts --domain mydomain.d
-
-# Apply cert for all hosts under a domain
-# in dappy.config.json
+# Apply cert group1.crt for all hosts under a domain
 npx @fabcotech/dappy-cli apply --cert group1.crt --domain mydomain.d
+
+# Bundled into one command
+npx @fabcotech/dappy-cli generatecerts --domain mydomain.d --aply
 
 # Generate .key and .crt files for a set of hosts
 npx @fabcotech/dappy-cli generatecerts --hosts mydomain.d foo.mydomain.d
+# Apply the cert group1.crt for each host in dappy.config.json
+npx @fabcotech/dappy-cli apply --cert group1.crt --hosts mydomain.d+foo.mydomain.d
 
-# Apply the cert for each host in dappy.config.json
-npx @fabcotech/dappy-cli apply --cert group1.crt --hosts mydomain.d foo.mydomain.d
+# Bundled into one command
+npx @fabcotech/dappy-cli generatecerts --hosts mydomain.d+foo.mydomain.d --apply
+
 ```
 
-**💡 Note :** You can create a single certificate for all hosts under a domain by using the --domain argument instead of listing all hosts. Having less certificates will also simplify your configuration on the server side.
+**💡 Note :** You can create a single certificate for all hosts under a domain by using the --domain argument instead of listing all hosts with a **+** separator. Having less certificates will also simplify your configuration on the server side.
 
 ## The less easy way
 
@@ -84,9 +88,13 @@ Now we must add the CERT record to our config file and push again.
 ## Checking and updating zones
 
 ```bash
-npx @fabcotech/dappy-cli pushzones
-npx @fabcotech/dappy-cli check
+npx @fabcotech/dappy-cli status
+npx @fabcotech/dappy-cli push
+npx @fabcotech/dappy-cli status
+npx @fabcotech/dappy-cli tree
 ```
+
+**💡 Note :** the `tree` command takes your local config, not the remote zone.
 
 **💡 Note :** the certificate you have forged **is a true root certificate** not signed by any certificate authority (you are the CA), it will be retreived with co-resolution by dappy browser, just like the IP addresses.
 

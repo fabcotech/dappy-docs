@@ -4,10 +4,10 @@ sidebar_position: 7
 
 # Update the zone
 
-Anytime you need to update your zone, just use the same command, it will update one or thousands of zones that you have configured, only if necessary !
+Anytime you need to update your zone, just change the A, or CERT records, and use the same `push` command. It will update one or thousands of zones that you have configured, only if necessary !
 
 ```bash
-npx @fabcotech/dappy-cli pushzones
+npx @fabcotech/dappy-cli push
 ```
 
 **Hundreds of TLDs, subdomains, one JSON file**

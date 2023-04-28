@@ -12,13 +12,13 @@ A domain name in the dappy name system is a non-fungible asset (like an NFT) tha
 
 ## How should I pay for a domain name ? And how much ?
 
-There is a fixed price, same for everyone for having a TLD in the dappy name system. Nevertheless it may vary over time, the companies that secure the dappy network can decide to change it based on insights or strategic choices.
+There is a fixed price, same for everyone for having a domain name in the dappy name system. Nevertheless it may vary over time, the companies that secure the dappy network can decide to change it based on insights or strategic choices.
 
-Right now dappy uses a simple blockchain protocol, therefore only fiat exists as a gateway to get a domain on [app.dappy.tech](https://app.dappy.tech/checkout) (credit card + PDF invoice). When dappy switches to a viable layer 1 blockchain platform, people will be able to purchase directly with cryptocurrency. 
+Right now dappy uses a simple blockchain protocol, therefore only fiat exists as a gateway to get a domain on [app.dappy.tech](https://app.dappy.tech/checkout) (credit card + PDF invoice). When dappy switches to a viable layer 1 blockchain platform, or stable coins, people will be able to purchase directly with cryptocurrency. 
 
 ## If I have a TLD why is there a .d at the end ?
 
-It does not matter that much if we call `hello.d` a TLD or second level domain. The `.d` at the end of domain names in dappy is a visual indicator that we are dealing with no-DNS dappy domain names. In dappy there is no corporation that unilaterally manages or stores the domain (like Verisign for .com for example), therefore we can call `hello.d` a TLD.
+It does not matter that much if we call `hello.d` a TLD or second level domain. The `.d` at the end of domain names in dappy is a visual indicator that we are dealing with no-DNS dappy domain names, there is a philosophy behind .d domains. In dappy there is no corporation that unilaterally manages or stores the domain (like Verisign for .com for example), therefore we can call `hello.d` a TLD.
 
 ## How do you deal with famous brands like apple and amazon ?
 

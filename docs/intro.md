@@ -10,7 +10,7 @@ sidebar_position: 1
 
 Hey there you are on the offical dappy docs, welcome ! 🚀😉.
 
-Dappy is a public open source name system that uses the blockchain, and provides a zero-trust co-resolution system. It has been engineered specifically for **🏢 critical web applications**, **🔒 protection of sensitive data** and **🚤 lean + rapid monitoring and management**. It is therefore a good fit for enterprises web applications, cryptocurrency, B2B or any other web application (or API) that needs high security and privacy.
+Dappy is a public open source name system that uses the blockchain, and provides a zero-trust co-resolution system. It has been engineered specifically for **🏢 critical APIs and SDKs**, **🔒 protection of sensitive data** and **🚤 lean + rapid monitoring and management**. It is therefore a good fit for enterprises web applications, cryptocurrency, B2B or any other web application (or API) that needs high security and privacy.
 
 Dappy clients (browser or programs) do co-resolution, many public resolvers are queried (DNS over HTTPS) for IP addresses or certificates, instead of a single resolver. It removes many attack vectors and allows companies to easily and securely expand digital services.
 
@@ -19,7 +19,7 @@ Dappy provides these instantaneous benefits :
 - No need to work with a Certificate Authority to get a certificate.
 - **No need to renew certificates** because dappy does not rely on certificate authorities provided by browsers or operating systems.
 - You can easily manage **hundreds of endpoints**, subdomains and TLS configurations with **one JSON file** and simple CLI commands.
-- Data exchange is **100x more secure and confidential**, because under a dappy context, browsers do co-resolution for service discovery, your web services are protected against many MITM and cache poisoning scenarios.
+- Data exchange is **100x more secure and confidential**, because the nodeJS process will do co-resolution for service discovery, your web services are protected against many MITM and cache poisoning scenarios.
 
 We're going to walk you through creating your first domain name in dappy. If you know already a bit about DNS, we're going to create a zone file.
 
@@ -27,7 +27,7 @@ You should get to a working **mydomain.d** website in few minutes only.
 
 ## Getting Started
 
-Dappy works a simple blockchain protocol that is specifically designed for names management,  ultra-scalability and efficiency. Dappy is nevertheless expected to migrate mid/long term to a stable and cheap layer 1 blockchain.
+Dappy works a simple blockchain protocol that is specifically designed for names management. You will not need tokens or cryptocurrency.
 
 Dappy CLI is the only javascript library that we need to use here.
 

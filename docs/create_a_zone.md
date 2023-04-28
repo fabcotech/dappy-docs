@@ -13,7 +13,7 @@ A zone is simply the equivalent of a DNS (domain name system) zone, in the dappy
 Depending on how you started, your zones may already be in sync with the blockchain state, it's always worth checking. 
 
 ```bash
-npx @fabcotech/dappy-cli check
+npx @fabcotech/dappy-cli status
 ```
 
 Let's create a new record in one of the zones that you have downloaded (you can also create from scratch).
@@ -42,7 +42,7 @@ Let's create a new record in one of the zones that you have downloaded (you can 
 - `type "A" record with data: "127.0.0.1"` : this tells dappy browser or any program that can resolve dappy names that `"127.0.0.1"` is the IP address at which the web app corresponding to `"mydomain"` will be served.
 
 ```bash
-npx @fabcotech/dappy-cli pushzones
+npx @fabcotech/dappy-cli push
 ```
 
 **The owner TXT record, what is it ?**
@@ -83,7 +83,7 @@ npx @fabcotech/dappy-cli printpublickey
 The `no owner` error should be gone now.
 
 ```bash
-npx @fabcotech/dappy-cli pushzones
+npx @fabcotech/dappy-cli push
 ```
 
 You should have the following log.
@@ -99,9 +99,9 @@ Purchases and updates were deployed, now do dappy-cli check to verify the state 
 That's it, our zone is created or updated, you can check as many time as you want now that your DNS zone is stored in the dappy name system, and ready to be resolved (co-resolved) by clients.
 
 ```bash
-npx @fabcotech/dappy-cli check
+npx @fabcotech/dappy-cli status
 ```
 
 **🔍 What's hapenning under the hood ?**
 
-When you do the `pushzones` command, dappy CLI takes your private key, signes the zone, sends this signed message to a member of the dappy network it knows. The network members will each verify the message, update the zone and gossip the message to others. After few seconds everyone has the new version and clients can keep or start doing co-resolution !
+When you do the `push` command, dappy CLI takes your private key, signes the zone, sends this signed message to a member of the dappy network it knows. The network members will each verify the message, update the zone and gossip the message to others. After few seconds everyone has the new version and clients can keep or start doing co-resolution !
