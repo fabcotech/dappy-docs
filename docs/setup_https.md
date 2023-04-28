@@ -18,7 +18,7 @@ npx @fabcotech/dappy-cli generatecerts --domain mydomain.d
 npx @fabcotech/dappy-cli apply --cert group1.crt --domain mydomain.d
 
 # Bundled into one command
-npx @fabcotech/dappy-cli generatecerts --domain mydomain.d --aply
+npx @fabcotech/dappy-cli generatecerts --domain mydomain.d --apply
 
 # Generate .key and .crt files for a set of hosts
 npx @fabcotech/dappy-cli generatecerts --hosts mydomain.d foo.mydomain.d
