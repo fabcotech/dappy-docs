@@ -4,14 +4,14 @@ sidebar_position: 8
 
 # Generate and publish root certificates
 
-At the top level, dappy allows you to have a self signed certificate. This is because **you are your own certificate authority** 🔒🔒🔒, you don't have to ask permission to exist !
+In the DNS+CA system, you ask a Certificate Authority for a signed certificate, and you use this certificate to authenticate your server. In dappy there is **no certificate authorities**, you **directly publish your self-signed certificates** in the zone, as a CERT record.
 
 ## The easy way
 
 You can use directly `@fabcotech/dappy-cli`, it has bindings with `openssl`.
 
 ```bash
-# Generate .key and .crt files for all hosts under 
+# Generate .key and .crt files for all hosts under
 # a domain (dappy.config.json file)
 npx @fabcotech/dappy-cli generatecerts --domain mydomain.d
 # Apply cert group1.crt for all hosts under a domain
@@ -96,6 +96,6 @@ npx @fabcotech/dappy-cli tree
 
 **💡 Note :** the `tree` command takes your local config, not the remote zone.
 
-**💡 Note :** the certificate you have forged **is a true root certificate** not signed by any certificate authority (you are the CA), it will be retreived with co-resolution by dappy browser, just like the IP addresses.
+**💡 Note :** the certificate you have forged **is a true root certificate** not signed by any certificate authority (you are the CA), it will be retreived with co-resolution by libraries and browsers that handle .d domains, just like the IP addresses.
 
-[Check the website](check_the_website.md)
+[Update a zone](update_a_zone.md)
